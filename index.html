@@ -3,24 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Minimalist ToDo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h3>Введите задание</h3>
-    <button id="button">Создать запись</button>
-    <button id="buttonDelete">Удалить всё</button>
+    <header>
+        <h1>Minimalist ToDo</h1>
+        <p>Организуй свои задачи просто и красиво</p>
+    </header>
+
+    <section class="controls">
+        <button id="button">Создать запись</button>
+        <button id="buttonDelete">Удалить всё</button>
+    </section>
+
     <div class="window">
-        <h4>Введите сроки его выполнения</h4>
-        <div>
-            <input type="text" id="inputText">
-            <input type="text" id="inputDescription">
+        <h4>Добавление задачи</h4>
+        <input type="text" id="inputText" placeholder="Название задачи">
+        <input type="text" id="inputDescription" placeholder="Описание / сроки">
+        <div class="window-buttons">
             <button id="inputButton">Создать запись</button>
+            <button id="inputCancel">Отмена</button>
         </div>
     </div>
-    <div id="mainblock">
 
-    </div>
+    <section id="mainblock">
+        <!-- Задачи будут здесь -->
+    </section>
 </body>
 <script src="script.js"></script>
 </html>
