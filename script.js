@@ -27,25 +27,26 @@ task.forEach(element => {
 
     mainblock.appendChild(text)
     mainblock.appendChild(description)
+
+    buttonDelTask = document.createElement('button')
+    buttonDelTask.textContent = 'Удалить'
+    mainblock.appendChild(buttonDelTask)
+
+    buttonDelTask.addEventListener('click',()=>{
+        task = task.filter(item => item.title !== element.title) 
+        localStorage.setItem('task',JSON.stringify(task))
+        location.reload()
+    })
 });
 
 inputbutton.addEventListener('click',()=>{
     if (!task.some(t => t.title === input.value.trim())){
-
-        let text = document.createElement('h1')
-        text.textContent = input.value
-
-        let description = document.createElement('h3')
-        description.textContent = inputDescription.value
-
-        mainblock.appendChild(text)
-        mainblock.appendChild(description)
-
         let newTasks = {
             title: input.value,
             description: inputDescription.value
         }
         task.push(newTasks)
         localStorage.setItem('task',JSON.stringify(task))
+        location.reload()
     }
 })
