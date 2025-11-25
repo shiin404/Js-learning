@@ -1,0 +1,91 @@
+/* Общие стили для страницы */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Заголовки */
+h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Кнопки */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Поля ввода */
+input[type="text"] {
+    padding: 8px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-right: 10px;
+    width: 200px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Окно ввода сроков */
+.window {
+    display: none;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    transition: all 0.3s ease;
+}
+
+.window.active {
+    display: block;
+}
+
+/* Основной блок для записей */
+#mainblock {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Адаптивность */
+@media (max-width: 500px) {
+    input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .window {
+        width: 100%;
+        padding: 15px;
+    }
+}
