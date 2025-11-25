@@ -17,26 +17,32 @@ buttonDelete.addEventListener('click',()=>{
     location.reload()
 })
 
-task.forEach(element => {
+resultTask = task.map(element => {
 
+    let divResult = document.createElement('div')
     let text = document.createElement('h1')
     text.textContent = element.title
 
     let description = document.createElement('h3')
     description.textContent = element.description
 
-    mainblock.appendChild(text)
-    mainblock.appendChild(description)
+    divResult.appendChild(text)
+    divResult.appendChild(description)
 
     buttonDelTask = document.createElement('button')
     buttonDelTask.textContent = 'Удалить'
-    mainblock.appendChild(buttonDelTask)
+    divResult.appendChild(buttonDelTask)
 
     buttonDelTask.addEventListener('click',()=>{
         task = task.filter(item => item.title !== element.title) 
         localStorage.setItem('task',JSON.stringify(task))
         location.reload()
     })
+    return divResult
+});
+
+resultTask.forEach(element => {
+    mainblock.appendChild(element)
 });
 
 inputbutton.addEventListener('click',()=>{
