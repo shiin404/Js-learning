@@ -45,14 +45,34 @@ resultTask.forEach(element => {
     mainblock.appendChild(element)
 });
 
-inputbutton.addEventListener('click',()=>{
-    if (!task.some(t => t.title === input.value.trim())){
-        let newTasks = {
-            title: input.value,
-            description: inputDescription.value
+class Task{
+    constructor(title,description){
+        this.title = title
+        this.description = description
+    }
+    save(){
+        if (task.some(t => t.title === this.title.trim())){
+            return
         }
-        task.push(newTasks)
+        task.push(this)
         localStorage.setItem('task',JSON.stringify(task))
         location.reload()
     }
+}
+
+inputbutton.addEventListener('click',()=>{
+    let newtask = new Task(input.value,inputDescription.value)
+    newtask.save()
 })
+
+// inputbutton.addEventListener('click',()=>{
+//     if (!task.some(t => t.title === input.value.trim())){
+//         let newTasks = {
+//             title: input.value,
+//             description: inputDescription.value
+//         }
+//         task.push(newTasks)
+//         localStorage.setItem('task',JSON.stringify(task))
+//         location.reload()
+//     }
+// })
